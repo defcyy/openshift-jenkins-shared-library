@@ -1,6 +1,6 @@
 @Library('openshift-jenkins-shared-library@master') _
 
-projectPipline {
+projectPipeline {
   withEnvironment("dev") {
     withNode("master") {
       echo "${project} - ${namespace} - ${environment}"

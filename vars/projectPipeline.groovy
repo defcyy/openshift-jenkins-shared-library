@@ -4,13 +4,7 @@ def call(Map context = [:], body) {
 
   def namespace = Openshift.currentNamespace()
 
-  pipeline {
-    agent none
+  body.namespace = namespace
 
-    stages {
-
-      body()
-
-    }
-  }
+  body()
 }
