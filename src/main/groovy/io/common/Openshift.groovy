@@ -15,23 +15,23 @@ class Openshift {
 
   IClient client
 
-  Openshift() {
-    def token = new File("/var/run/secrets/kubernetes.io/serviceaccount/token").text
-    def is = new FileInputStream("/var/run/secrets/kubernetes.io/serviceaccount/ca.crt")
-    def certificate = CertificateFactory.getInstance("X.509").generateCertificate(is)
-    client = new ClientBuilder()
-        .toCluster("https://kubernetes.default")
-        .usingToken(token)
-        .sslCertificate("openshift", certificate)
-        .build()
-  }
+//  Openshift() {
+//    def token = new File("/var/run/secrets/kubernetes.io/serviceaccount/token").text
+//    def is = new FileInputStream("/var/run/secrets/kubernetes.io/serviceaccount/ca.crt")
+//    def certificate = CertificateFactory.getInstance("X.509").generateCertificate(is)
+//    client = new ClientBuilder()
+//        .toCluster("https://kubernetes.default")
+//        .usingToken(token)
+//        .sslCertificate("openshift", certificate)
+//        .build()
+//  }
 
   static currentNamespace() {
     return new File(namespaceFile).text
   }
 
-  def getDeploymentConfigs() {
-    IDeploymentConfig[] resources = client.list(ResourceKind.DEPLOYMENT_CONFIG, currentNamespace())
-    return resources
-  }
+//  def getDeploymentConfigs() {
+//    IDeploymentConfig[] resources = client.list(ResourceKind.DEPLOYMENT_CONFIG, currentNamespace())
+//    return resources
+//  }
 }
