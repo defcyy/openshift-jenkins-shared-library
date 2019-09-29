@@ -1,13 +1,12 @@
 @Library('openshift-jenkins-shared-library@master') _
 
-projectPipeline {
-  withEnvironment("dev") {
-    withNode("master") {
-      echo "${project} - ${namespace} - ${environment}"
-    }
 
-    withNode("maven") {
-      echo "${project} - ${namespace} - ${environment}"
-    }
-  }
+node {
+  echo "node 1"
+  utils.test()
+}
+
+node {
+  echo "node 2"
+  utils.test()
 }
