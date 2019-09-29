@@ -1,4 +1,4 @@
-@Library('github.com/defcyy/openshift-jenkins-shared-library.git@master') _
+@Library('github.com/defcyy/openshift-jenkins-shared-library@master') _
 
 
 node {
